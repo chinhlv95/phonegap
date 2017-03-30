@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="stateless4j-2.4.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/stateless4j-2.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

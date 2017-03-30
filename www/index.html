@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Yêu thể hình</title>
+    <script type="text/javascript">$(function () {
+  $("[data-role=panel]").enhanceWithin().panel();
+});</script>
+</head>
+
+<body>
+    <div data-role="page" id="pageload">
+        <div data-role="header" data-position="fixed">
+        </div>
+        <div data-role="main" class="ui-content">
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+            <div data-role="panel" id="myPanel" data-display="reveal" data-position="left" data-theme="a">
+            <img width="100%" height="250px" src="img/sport.jpg" />
+            <ul data-role="listview">
+                <li><a href="#homepage"><i class="fa fa-home" aria-hidden="true"></i>Trang Chủ</a></li>
+                <li><a href="#popularpage"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Nhiều người xem</a></li>
+                <li><a href="#food"><i class="fa fa-heartbeat" aria-hidden="true"></i>Dinh Dưỡng</a></li>
+                <li><a href="#video"><i class="fa fa-youtube-play" aria-hidden="true"></i>Video</a></li>
+                <li><a href="#factorize" class="factorize"><i class="fa fa-child" aria-hidden="true"></i>Động lực</a></li>
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>About</a></li>
+                <li><a href="#" id="logout"><i class="fa fa-reply-all" aria-hidden="true"></i>Logout</a></li>
+            </ul>
+        </div>
+    <div data-role="page" id="homepage" class="page">
+        <div class="home" data-role="header" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#myPanel" style="color: #fff; font-size: 1.5em; border: none; border-radius: 0; background-color: #246ad2;" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left ui-corner-all ui-shadow ui-nodisc-icon">Fitness</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul id="recent-post">
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2> Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="pageone">
+        <div data-role="header" data-position="fixed">
+            <h1>Đăng nhập</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <input id="username" type="text" placeholder="Tên tài khoản">
+            <input id="password" type="password" placeholder="Mật khẩu">
+            <button onclick="login();">Đăng Nhập</button>
+            <a href="#pagetwo" id="page_two_link"></a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="popularpage" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Top View</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul id="popular-post">
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="food" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Dinh Dưỡng</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ol data-role="listview" id="list-cate">
+            </ol>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="cate-detail" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Dinh Dưỡng</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul id="cate-list-post">
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="video" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Video</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ol data-role="listview" id="page-video">
+            </ol>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="video-detail" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Video</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul data-role="listview" id="page-video-detail">
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="factorize" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Động lực</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul id="factorize-post">
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <div data-role="page" id="post-detail" class="page">
+        <div class="header" data-role="header" data-position="fixed">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#" data-rel="back"><i class="fa fa-reply" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <h1>Post Detail</h1>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="post-content"></div>
+            <div id="post-comment"></div>
+            <div id="comment" class="ui-block-a">
+        
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>Powered by Chinhlv</h2>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/detail.js"></script>
+</body>
+
+</html>
